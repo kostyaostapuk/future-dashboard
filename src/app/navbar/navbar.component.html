@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<div class="switch-sidebar">
+				<a href="#">
+						<i class="nb-menu"></i>
+				</a>
+			</div>
+			<a class="navbar-brand" href="#">
+	        <span class="bold-brand">ngx</span>{{brand}}
+	      </a>
+			<div class="navbar-text">
+				<p class="nameTheme">{{nameThemes.firstTheme}}</p>
+			</div>
+			<div class="navbar-text">
+				<label class="switch">
+							<input type="checkbox" checked="checked">
+							<span class="slider"></span>
+					</label>
+			</div>
+			<div class="navbar-text">
+				<p class="nameTheme">{{nameThemes.secondTheme}}</p>
+			</div>
+			<div class="navbar-text">
+				<div class="help">
+					<p>Need some help? Drop us a line at</p>
+					<a href="#">contact@epam.com</a>
+				</div>
+			</div>
+			<div class="navbar-text">
+				<div class="button">
+					<a href="#" class="icon-container">
+						<i class="nb-search" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+			<div class="navbar-text">
+				<div class="button">
+					<a href="#">
+						<i class="nb-email" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+			<div class="navbar-text">
+				<div class="button">
+					<a href="#" data-notifications="10">	<i class="nb-notifications" aria-hidden="true"></i></a>
+				</div>
+			</div>
+
+			<div class="navbar-text">
+				<div class="button">
+					<div class="user-container">
+						<div class="user-image"><img class="img-circle" src="{{user.img}}" alt=""></div>
+						<div class="info-container">
+							<p>{{user.name}} <br> {{user.surname}}</p>
+						</div>
+						<div class="user-context-menu" style="display: none;">
+							<ul>
+								<li class="arrow"></li>
+								<li>Profile</li>
+								<li>Friends</li>
+								<li>Log out</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbar-text">
+				<a href="#"><i class="nb-grid-b"></i></a>
+			</div>
+
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,89 @@
+@import "../pages/dashboard/card/card.component.css";
+#sticky-sidebar{
+	font-family: "Exo", sans-serif;
+	margin-top: 25px;
+	background-color: #3D3780;
+	width: 260px;
+	border-top-right-radius: 10px;
+	color: #fff;
+	position: fixed;
+	left: 0;
+	box-shadow: 0 8px 20px 0 rgba(40,37,89,.6);
+}
+.btn, .btn:hover{
+	margin-top: -10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 3px 35px;
+	letter-spacing: .4px;
+	border-radius: .5rem;
+	cursor: default;
+}
+.btn span{
+	padding-left: 10px;
+	text-shadow: 0 1px 3px rgba(0,0,0, .3);
+}
+.menu-items{
+	list-style-type: none;
+	padding-left: 10px;
+}
+.menu-items i{
+	font-size: 40px;
+	color: #a1a1e5;
+}
+.btn i{
+	font-size: 32px;
+}
+.menu-items .nb-home{
+	font-size: 40px;
+	font-weight: 400;
+	color: #fff;
+}
+.title span{
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+}
+.menu-item .chevron{
+	font-size: 14px;
+	font-weight: 400;
+}
+.menu-item a:hover{
+	color: #fff;
+}
+.menu-item{
+	margin: 9px 0 9px 0;
+}
+.menu-items{
+	margin-top: 25px;
+}
+.menu-items li a{
+	display: flex;
+	align-items: center;
+}
+.menu-items span{
+	padding: 2px 0 0 8px;
+	vertical-align: middle;
+}
+.menu-item span{
+	flex: .9;
+}
+.menu-item:hover i{
+	color: #fff;
+}
+.subtitle{
+	padding: 12px 0 12px 8px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+span, i{
+	vertical-align: middle;
+}
+a{
+	color: #a1a1e5;
+	font-weight: 500;
+}
+a:hover{
+	text-decoration: none;
+}

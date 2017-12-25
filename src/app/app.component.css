@@ -1,0 +1,35 @@
+body{
+	background: #2F296B;
+}
+.main-container{
+	margin-top: 28px;
+	padding-left: 310px;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+.dashboard{
+	padding-top: 80px;
+	margin-right: 35px;
+}
+.scrollable-container{
+	background: #2F296B;
+	max-width: 1920px;
+	margin: 0 auto;
+	height: 100vh;
+	display: block;
+	overflow: auto;
+	overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb{
+	background: #554db3;
+	border-radius: 2.5px;
+	padding-left: 10px;
+}
+::-webkit-scrollbar-track{
+	background: #332E73;
+}
