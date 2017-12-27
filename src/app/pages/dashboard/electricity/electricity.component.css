@@ -1,0 +1,10 @@
+.chart-container{
+	background-image: radial-gradient(circle at 50% 50%, #423f8c, #302c6e);
+}
+#canvas{
+	position: absolute;
+	background-color: #fff;
+}
+.title{
+	font-family: "Exo", sans-serif;
+}
