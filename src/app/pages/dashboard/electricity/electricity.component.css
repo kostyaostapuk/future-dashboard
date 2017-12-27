@@ -8,3 +8,15 @@
 .title{
 	font-family: "Exo", sans-serif;
 }
+
+.tooltip{
+	background-color: rgba(0, 255, 170, 0.35);
+	box-shadow: rgba(0, 255, 170, 0.35) 0px 2px 46px 0px;
+	border-style: solid;
+	position: absolute;
+}
+/*
+display: none;  white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1);  border-width: 3px; border-color: rgb(0, 217, 119); color: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 20px; font-family: "Microsoft YaHei"; line-height: 30px; left: 67px;
+top: 100px;
+border-radius: 10px; padding: 8px 24px;
+ */
