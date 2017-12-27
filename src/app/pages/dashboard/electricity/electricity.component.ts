@@ -10,8 +10,11 @@ export class ElectricityComponent implements OnInit {
 	consumedTitle:string="Consumed";
 	spentTitle:string="Spent";
 
-	consumendAmount:number=816;
-	spentAmount:number=816;
+	consumendValue:number=816;
+	spentValue:number=291;
+
+	consumendUnit:string="kWh";
+	spentUnit:string="USD";
   constructor() { }
 
   ngOnInit() {
