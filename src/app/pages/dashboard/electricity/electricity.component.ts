@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectricityService } from '../../../@core/data/electricity.service';
 
 @Component({
   selector: 'electricity',
   templateUrl: './electricity.component.html',
-  styleUrls: ['./electricity.component.css']
+  styleUrls: ['./electricity.component.css'],
+	providers: [ElectricityService]
 })
 export class ElectricityComponent implements OnInit {
 
@@ -15,7 +17,11 @@ export class ElectricityComponent implements OnInit {
 
 	consumendUnit:string="kWh";
 	spentUnit:string="USD";
-  constructor() { }
+
+	data: Array<any>;
+  constructor(private eService: ElectricityService) {
+		this.data=eService.getData();
+	}
 
   ngOnInit() {
   }
