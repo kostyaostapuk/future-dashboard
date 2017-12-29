@@ -2,25 +2,32 @@
 <section>
 	<div class="chart-container">
 		<div class="header-chart">
-			<div class="title">
-				{{consumedTitle}}
+			<div class="header-stats">
+				<div class="stats-block">
+					<div class="subtitle text-center">
+						{{consumedTitle}}
+					</div>
+					<span class="value">{{consumendValue}}</span>
+					<span class="unit">{{consumendUnit}}</span>
+				</div>
+
+				<div class="stats-block">
+					<div class="subtitle text-center">
+						{{spentTitle}}
+					</div>
+					<span class="value">{{spentValue}}</span>
+					<span class="unit">{{spentUnit}}</span>
+				</div>
+
+				<div class="dropdown">dropdown</div>
 
 			</div>
-			{{consumendValue}}
-			{{spentValue}}
 
-			<div class="unit">
-				{{consumendUnit}}
-			</div>
-			<div class="title">
-				{{spentTitle}}
-			</div>
-
-			<div>{{data}}</div>
-			<div class="dropdown"></div>
 		</div>
 		<div class="chart-body">
-
+		<canvas id="chart-electr"></canvas>
 		</div>
 	</div>
+
+
 </section>
