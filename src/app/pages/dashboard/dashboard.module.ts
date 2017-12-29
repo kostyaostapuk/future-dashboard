@@ -14,6 +14,7 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
+import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 
 @NgModule({
 	imports: [
@@ -46,6 +47,7 @@ import { FooterComponent } from './footer/footer.component';
 		TrafficComponent,
 		WeatherComponent,
 		GalleryComponent,
-		FooterComponent]
+		FooterComponent,
+		ElectricityChartComponent]
 })
 export class DashboardModule { }
