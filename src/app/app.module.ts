@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { SidebarComponent} from './sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 		AppComponent,
 		NavbarComponent,
 		SidebarComponent,
+		TestComponent,
 	],
 	imports: [
 		AppRoutingModule,
