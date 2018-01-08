@@ -6,7 +6,38 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
+	switch(card:string){
+		switch (card){
+			case "cardLight":
+				if (this.cardLight.status=="On") {
+				    this.cardLight.status="Off";
+				}else{
+						this.cardLight.status="On";
+				}
+			break;
+			case "cardRoller":
+				if (this.cardRoller.status=="On") {
+				    this.cardRoller.status="Off";
+				}else{
+						this.cardRoller.status="On";
+				}
+			break;
+			case "cardAudio":
+				if (this.cardAudio.status=="On") {
+				    this.cardAudio.status="Off";
+				}else{
+						this.cardAudio.status="On";
+				}
+			break;
+			case "cardCoffee":
+				if (this.cardCoffee.status=="On") {
+				    this.cardCoffee.status="Off";
+				}else{
+						this.cardCoffee.status="On";
+				}
+			break;
+		}
+	}
 	cardLight = {
 		title: "Light",
 		icon: "nb-lightbulb",
@@ -35,5 +66,7 @@ export class CardComponent implements OnInit {
 
 	ngOnInit() {
 	}
+
+
 
 }

@@ -76,6 +76,7 @@ i{
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+  margin-left: 15px;
 }
 .row{
 	margin-top: 0px;

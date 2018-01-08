@@ -18,6 +18,8 @@ export class ElectricityComponent implements OnInit {
 	consumendUnit:string="kWh";
 	spentUnit:string="USD";
 
+  
+
 	data: Array<any>;
   constructor(private eService: ElectricityService) {
 		this.data=eService.getData();

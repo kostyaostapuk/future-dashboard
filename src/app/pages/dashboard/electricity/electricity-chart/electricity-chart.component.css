@@ -1,6 +1,7 @@
 #electricity-chart{
 	position: absolute;
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #fff;
 	height: 494px;
 	width: 580px;
 }
