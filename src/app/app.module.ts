@@ -6,6 +6,7 @@ import { themeModule} from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { SidebarComponent} from './sidebar/sidebar.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SidebarComponent} from './sidebar/sidebar.component';
 		SidebarComponent,
 	],
 	imports: [
+		AppRoutingModule,
 		BrowserModule,
 		PagesModule,
 		themeModule
