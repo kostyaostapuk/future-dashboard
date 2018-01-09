@@ -3,7 +3,7 @@
   box-shadow: 0 3px 0 0 #7e4ddb, 0 2px 8px 0 #9259ff, 0 4px 10px 0 rgba(33,7,77,.5);
 }
 .success{
-	background-image: linear-gradient(90deg, #00d9bf, #00d977);
+	background-image: linear-gradient(90deg, #00d9bf, #00d977) !important;
 	box-shadow: 0 3px 0 0 #00bb85, 0 2px 8px 0 #00d99b, 0 4px 10px 0 rgba(33,7,77,.5);
 }
 .warning{

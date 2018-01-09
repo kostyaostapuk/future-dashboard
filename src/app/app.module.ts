@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { SidebarComponent} from './sidebar/sidebar.component';
 import { Routes, RouterModule } from '@angular/router';
+
+import { VkBoardModule } from './vk-board/vk-board.module';
 import { VkBoardComponent } from './vk-board/vk-board.component';
 // import { AppRoutingModule } from './app-routing.module';
 const routes: Routes = [
@@ -20,16 +22,17 @@ const routes: Routes = [
 		AppComponent,
 		NavbarComponent,
 		SidebarComponent,
-		VkBoardComponent
+    VkBoardComponent
 	],
 	imports: [
 		// AppRoutingModule,
 		RouterModule.forRoot(routes, {useHash:true}),
 		BrowserModule,
 		PagesModule,
-		themeModule
+		themeModule,
+    VkBoardModule
 	],
-	providers: [],
+	providers: [VkBoardModule],
 	bootstrap: [AppComponent]
 })
 
