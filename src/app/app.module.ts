@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Injectable } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { PagesModule } from './pages/pages.module';
 import { themeModule} from './@theme/theme.module';
@@ -9,9 +9,12 @@ import { NavbarComponent} from './navbar/navbar.component';
 import { SidebarComponent} from './sidebar/sidebar.component';
 import { Routes, RouterModule } from '@angular/router';
 
-import { VkBoardModule } from './vk-board/vk-board.module';
+import { VkBoardService } from './vk-board/vk-board.service';
 import { VkBoardComponent } from './vk-board/vk-board.component';
 // import { AppRoutingModule } from './app-routing.module';
+
+import { HttpClienModule, HttpClientJsonpModule } from '@angular/common/http';
+
 const routes: Routes = [
   {path:'', component: DashboardComponent },
 	{path:'vk-board', component: VkBoardComponent }
@@ -29,10 +32,9 @@ const routes: Routes = [
 		RouterModule.forRoot(routes, {useHash:true}),
 		BrowserModule,
 		PagesModule,
-		themeModule,
-    VkBoardModule
+		themeModule
 	],
-	providers: [VkBoardModule],
+	providers: [VkBoardService],
 	bootstrap: [AppComponent]
 })
 
