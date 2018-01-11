@@ -1,3 +1,12 @@
 ul{
   list-style: none;
 }
+li{
+  margin-bottom: 10px;
+}
+img{
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: none;
+  border: solid 3px #00f9a6;
+}
