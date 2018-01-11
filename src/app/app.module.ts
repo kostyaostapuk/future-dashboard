@@ -1,8 +1,10 @@
-import { BrowserModule, Injectable } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, Injectable } from '@angular/core';
 import { PagesModule } from './pages/pages.module';
-import { themeModule} from './@theme/theme.module';
-import { DashboardComponent} from './pages/dashboard/dashboard.component';
+import { themeModule } from './@theme/theme.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { JsonpModule, Jsonp, Response } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
@@ -13,7 +15,7 @@ import { VkBoardService } from './vk-board/vk-board.service';
 import { VkBoardComponent } from './vk-board/vk-board.component';
 // import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClienModule, HttpClientJsonpModule } from '@angular/common/http';
+// import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path:'', component: DashboardComponent },
@@ -32,7 +34,9 @@ const routes: Routes = [
 		RouterModule.forRoot(routes, {useHash:true}),
 		BrowserModule,
 		PagesModule,
-		themeModule
+		themeModule,
+    HttpClientModule,
+    JsonpModule
 	],
 	providers: [VkBoardService],
 	bootstrap: [AppComponent]

@@ -1,4 +1,10 @@
+
 <p style="color: #fff;">
-  vk-board works!
+  vk-board works! <br>
+
+
 </p>
-{{getData}}
+
+<ul style="color: #fff;">
+  <li *ngFor="let friend of list">{{friend.id+" "+friend.first_name+" "+ friend.last_name}}</li>
+</ul>
