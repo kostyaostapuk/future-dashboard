@@ -1,12 +1,85 @@
+
 ul{
   list-style: none;
 }
 li{
   margin-bottom: 10px;
 }
+a, a:hover{
+  font-family: "Exo",sans-serif;
+  color: #00f9a6;
+  text-decoration: none;
+}
+i:hover{
+  font-family: "Exo",sans-serif;
+  color: #00f9a6;
+}
 img{
   border-radius: 50%;
   background-size: cover;
   background-repeat: none;
-  border: solid 3px #00f9a6;
+  border: solid 2px #00f9a6;
+  background: #a1a1e5;
+  height: 80px;
+  width: 80px;
+  float: left;
+}
+
+
+.form-check-input{
+  height: 22px;
+  width: 22px;
+}
+.card-block{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.card{
+  margin-bottom: 10px;
+  background-color: #3D3780;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 280px;
+}
+.card-title {
+  font-family: "Exo",sans-serif;
+  color: #fff;
+  font-family: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card-subtitle {
+  font-family: "Exo",sans-serif;
+  color: #a1a1e5;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.tools {
+  color: #fff;
+  font-size: 25px;
+  white-space: nowrap;
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+}
+.tools i{
+  margin-left: 3px;
+}
+.user-info{
+  float: right;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.status{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: red;
+  white-space: nowrap;
+  margin-left: 7px ;
 }

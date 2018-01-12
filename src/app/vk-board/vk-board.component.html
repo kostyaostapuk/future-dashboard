@@ -1,10 +1,22 @@
+<div class="container">
+  <div class="row">
+    <filter></filter>
+    <div class="col-md-4" *ngFor="let friend of list">
+      <div class="card">
+        <div class="card-block">
+          <img [src]="friend.photo_100" alt="">
+          <div class="user-info">
+            <div class="card-title">{{friend.first_name +" "+ friend.last_name}}<div class="status" [ngStyle]="{'background-image': getColorStatus(friend.online)}"></div></div>
+            <div class="card-subtitle">ID:{{friend.id}}</div>
+            <div class="link"><a target="_blank" href="https://vk.com/id{{friend.id}}">Link</a></div>
+          </div>
 
-<p style="color: #fff;">
-  vk-board works! <br>
-
-
-</p>
-
-<ul style="color: #fff;">
-  <li *ngFor="let friend of list"><img [src]="friend.photo_100" alt="">{{friend.id+" "+friend.first_name+" "+ friend.last_name}}</li>
-</ul>
+          <div class="tools">
+            <a (click)="alert()"><i class="nb-star"></i></a>
+            <a (click)="alert()"><i class="nb-email"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

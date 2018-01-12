@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VkBoardService, Friend } from './vk-board.service';
+import { VkBoardService } from './vk-board.service';
 
 
 @Component({
@@ -8,9 +8,25 @@ import { VkBoardService, Friend } from './vk-board.service';
   styleUrls: ['./vk-board.component.css']
 })
 export class VkBoardComponent implements OnInit {
-
-  name = "Korsar";
+  alert(){
+    alert("eqqweq");
+  }
   list=[];
+  color=[
+    'linear-gradient(90deg,#fc0,#ffa100)',
+    'linear-gradient(90deg,#00d9bf,#00d977)'
+  ];
+  getColorStatus(status){
+    switch (status){
+      case 0:
+        return this.color[0];
+      break;
+      case 1:
+        return this.color[1];
+      break;
+
+    }
+  }
   constructor(private vkService: VkBoardService) {
 
   }
@@ -25,6 +41,10 @@ export class VkBoardComponent implements OnInit {
         //   let friend= new Friend(res.id, res.first_name,res.last_name);
         //   friendsList.push(friend);
         //   console.log(friend);
+        // })
+
+        // friendsJSON.forEach((res)=>{
+        //   let friend
         // })
         console.log(this.list);
 

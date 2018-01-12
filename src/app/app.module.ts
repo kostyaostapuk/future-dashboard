@@ -13,6 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { VkBoardService } from './vk-board/vk-board.service';
 import { VkBoardComponent } from './vk-board/vk-board.component';
+import { FilterComponent } from './vk-board/filter/filter.component';
 // import { AppRoutingModule } from './app-routing.module';
 
 // import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -27,7 +28,8 @@ const routes: Routes = [
 		AppComponent,
 		NavbarComponent,
 		SidebarComponent,
-    VkBoardComponent
+    VkBoardComponent,
+    FilterComponent
 	],
 	imports: [
 		// AppRoutingModule,
