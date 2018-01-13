@@ -1,4 +1,8 @@
-
+h3{
+  font-family: "Exo",sans-serif;
+  color: #fff;
+  margin: 0;
+}
 ul{
   list-style: none;
 }
@@ -24,7 +28,12 @@ img{
   width: 80px;
   float: left;
 }
-
+.filter{
+  background-color: #3D3780;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
 .form-check-input{
   height: 22px;

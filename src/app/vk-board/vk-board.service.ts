@@ -3,15 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Jsonp } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-// export class Friend{
-//   constructor(
-//     public userID: number,
-//     public firstName:string,
-//     public lastName: string,
-//     // public photo: string,
-//     // public link: string,
-//   )
-// }
+
 @Injectable()
 export class VkBoardService {
   constructor(private jsonp: Jsonp) { }

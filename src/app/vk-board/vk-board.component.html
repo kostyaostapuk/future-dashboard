@@ -1,6 +1,19 @@
 <div class="container">
   <div class="row">
-    <filter></filter>
+    <div class="col-md-12">
+      <div class="filter">
+        <h3>Filters</h3>
+
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="col-md-4" *ngFor="let friend of list">
       <div class="card">
         <div class="card-block">
@@ -12,8 +25,8 @@
           </div>
 
           <div class="tools">
-            <a (click)="alert()"><i class="nb-star"></i></a>
-            <a (click)="alert()"><i class="nb-email"></i></a>
+            <a (click)="clearList()"><i class="nb-star"></i></a>
+            <a (click)="clearList()"><i class="nb-email"></i></a>
           </div>
         </div>
       </div>
