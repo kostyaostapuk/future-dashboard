@@ -49,10 +49,12 @@ export class VkBoardComponent implements OnInit {
 
       for (let i = 0; i < this.searchList.length; i++) {
         if (this.searchList[i].first_name.toLowerCase().indexOf(val, 0) == 0 || this.searchList[i].last_name.toLowerCase().indexOf(val, 0) == 0) {
+          this.messageNotFound = "";
           this.list.push(this.searchList[i]);
+
         }
-        else{
-          this.messageNotFound = "Пользователи с такими данными не найдены, попробуйте ещё раз";
+        if(this.list.length<=0){
+            this.messageNotFound = "Пользователи с такими данными не найдены, попробуйте ещё раз";
         }
       }
     }
