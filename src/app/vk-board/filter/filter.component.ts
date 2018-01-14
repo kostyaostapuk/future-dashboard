@@ -10,13 +10,12 @@ import { FormControl, ReactiveFormsModule} from '@angular/forms';
 })
 export class FilterComponent implements OnInit {
   searchField: FormControl;
-
   searchReq="";
+
   online=false;
 
 
   showOnline(online){
-    // online=this.online;
     return this.vkBoard.showOnline(online);
   }
   searchFriend(val){
@@ -28,17 +27,15 @@ export class FilterComponent implements OnInit {
         .distinctUntilChanged()
         .subscribe(term => {
           this.searchReq=term;
-          // this.searches.push(term);
-          this.searchFriend(this.searchReq);
-          console.log(this.searchReq);
-          return term;
-
+          this.searchFriend(this.searchReq.toLowerCase());
         });
+
+
   }
   constructor(private filterData: FilterService, private vkBoard: VkBoardComponent) { }
 
   ngOnInit() {
-      this.searchInput();
+    this.searchInput();
   }
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { VkBoardService } from './vk-board.service';
 
-
 @Component({
   selector: 'vk-board',
   templateUrl: './vk-board.component.html',
@@ -12,9 +11,10 @@ import { VkBoardService } from './vk-board.service';
 export class VkBoardComponent implements OnInit {
 
   //Friend List
-  searchList: string[]=[];
+  searchList = [];
   list = [];
   cache = [];
+  messageNotFound: string = "";
   clearList() {
     this.list = [];
   }
@@ -25,35 +25,42 @@ export class VkBoardComponent implements OnInit {
     this.getData();
   }
   showOnline(status) {
-      if (status===true) {
-        this.cache = this.list;
-        this.clearList();
-        for (let i = 0; i < this.cache.length; i++) {
-          if (this.cache[i].online == 1) {
-            this.list.push(this.cache[i]);
-          }
+    if (status === true) {
+      this.cache = this.list;
+      this.clearList();
+      for (let i = 0; i < this.cache.length; i++) {
+        if (this.cache[i].online === 1) {
+          this.list.push(this.cache[i]);
         }
       }
-      else{
-        this.clearList();
-        this.getData();
-      }
-  }
-  searchFriend(val){
-    console.log("val:"+val);
-    if(val.length>0){
 
-      for (let i = 0; i < this.list.length; i++) {
-          if (this.list[i].first_name.includes(val) || this.list[i].last_name.includes(val)) {
-            this.searchList.push(this.list[i]);
-          }
-      }
-      this.clearList();
-      this.list=this.searchList;
     }
     else {
       this.clearList();
       this.getData();
+    }
+  }
+  searchFriend(val) {
+    console.log("val:" + val);
+    this.searchList = this.list;
+    this.clearList();
+
+    if (val.length > 0) {
+
+      for (let i = 0; i < this.searchList.length; i++) {
+        if (this.searchList[i].first_name.toLowerCase().indexOf(val, 0) == 0 || this.searchList[i].last_name.toLowerCase().indexOf(val, 0) == 0) {
+          this.list.push(this.searchList[i]);
+        }
+        else{
+          this.messageNotFound = "Пользователи с такими данными не найдены, попробуйте ещё раз";
+        }
+      }
+    }
+    else {
+      this.messageNotFound = "";
+      this.clearList();
+      this.getData();
+
     }
   }
   getData() {

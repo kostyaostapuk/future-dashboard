@@ -3,8 +3,9 @@
     <div class="col-md-12">
       <div class="filter">
 
-        <h3>Filters</h3>
+
         <div class="col-md-4">
+          <h3>Filters</h3>
           <div class="filter-box">
             <input type="checkbox" class="checkbox-btn" [checked]="online" (change)="online = $event.target.checked" (change)="showOnline(online)"> Online Now
           </div>
@@ -12,7 +13,7 @@
 
         <!-- <input type="range" min="1" max="100" value="50" class="slider"> -->
         <div class="col-md-4">
-          <input type="search" class="form-control" placeholder="Search user" [formControl]="searchField">
+          <input type="search" class="form-control" placeholder="Search user"  [formControl]="searchField">
         </div>
       </div>
 

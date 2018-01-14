@@ -9,6 +9,7 @@
             <div class="card-title">{{friend.first_name +" "+ friend.last_name}}<div class="status" [ngStyle]="{'background-image': getColorStatus(friend.online)}"></div></div>
             <div class="card-subtitle">ID:{{friend.id}}</div>
             <div class="link"><a target="_blank" href="https://vk.com/id{{friend.id}}">Link</a></div>
+
           </div>
 
           <div class="tools">
@@ -17,6 +18,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-12">
+      <h3>{{messageNotFound}}</h3>
     </div>
   </div>
 </div>
