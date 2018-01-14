@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from './data/filter.service';
-import { VkBoardComponent} from '../vk-board.component';
+import { VkBoardComponent } from '../vk-board.component';
+import { FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'filter',
@@ -8,31 +9,36 @@ import { VkBoardComponent} from '../vk-board.component';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+  searchField: FormControl;
 
-  constructor(private filterData: FilterService, private vkBoardFun: VkBoardComponent) { }
+  searchReq="";
+  online=false;
 
-  filterFields=[];
-  getFilterData(){
-    this.filterFields = this.filterData.getData();
-    console.log(this.filterFields);
+
+  showOnline(online){
+    // online=this.online;
+    return this.vkBoard.showOnline(online);
   }
-  showOnline(){
-    this.vkBoardFun.showOnline();
+  searchFriend(val){
+    return this.vkBoard.searchFriend(val);
   }
-  onFilter(val){
-    switch (val){
-      case 'showOnline':
-        this.vkBoardFun.showOnline();
-        console.log("qweqwe");
-      break;
+  searchInput(){
+    this.searchField = new FormControl();
+    this.searchField.valueChanges
+        .distinctUntilChanged()
+        .subscribe(term => {
+          this.searchReq=term;
+          // this.searches.push(term);
+          this.searchFriend(this.searchReq);
+          console.log(this.searchReq);
+          return term;
 
-      case 'showOffline':
-
-      break;
-    }
+        });
   }
+  constructor(private filterData: FilterService, private vkBoard: VkBoardComponent) { }
+
   ngOnInit() {
-    this.getFilterData();
+      this.searchInput();
   }
 
 }
