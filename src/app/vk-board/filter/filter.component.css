@@ -3,6 +3,11 @@ h3{
   color: #fff;
   margin: 0;
 }
+a, a:hover{
+  margin-left: 5px;
+  text-decoration: none;
+  color: #00f9a6;
+}
 .filter{
   background-color: #3D3780;
   padding: 15px;

@@ -17,6 +17,7 @@ import { VkBoardComponent } from './vk-board/vk-board.component';
 import { FilterComponent } from './vk-board/filter/filter.component';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
 import { MessageBoxComponent } from './vk-board/message-box/message-box.component';
+import { FavoritesComponent } from './vk-board/favorites/favorites.component';
 
 // import { AppRoutingModule } from './app-routing.module';
 
@@ -24,7 +25,8 @@ import { MessageBoxComponent } from './vk-board/message-box/message-box.componen
 
 const routes: Routes = [
   {path:'', component: DashboardComponent },
-	{path:'vk-board', component: VkBoardComponent }
+	{path:'vk-board', component: VkBoardComponent },
+  {path:'favorites', component: FavoritesComponent }
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const routes: Routes = [
 		NavbarComponent,
 		SidebarComponent,
     VkBoardComponent,
-    FilterComponent
+    FilterComponent,
+    FavoritesComponent
 	],
 	imports: [
 		// AppRoutingModule,
@@ -45,7 +48,7 @@ const routes: Routes = [
     JsonpModule,
     ReactiveFormsModule
 	],
-	providers: [VkBoardService, FilterService],
+	providers: [VkBoardService, FilterService, VkBoardComponent],
 	bootstrap: [AppComponent]
 })
 

@@ -1,0 +1,15 @@
+@import "../vk-board.component.css";
+.board{
+  height: 500px;
+  background-color: #3D3780;
+  border-radius: 15px;
+}
+a{
+  color: #fff;
+  font-family: "Exo", sans-serif;
+}
+/* a:active{
+  background-color: rgba(0,255,170,.25);
+  border-color: #00f9a6;
+  color: #fff;
+} */

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="back">
+          <a href="/#/vk-board"><i class="nb-arrow"></i>back to VK-Board</a>
+        </div>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let friend of list">
+            <div class="card">
+              <div class="card-block">
+                <img [src]="friend.photo_100" alt="">
+                <div class="user-info">
+                  <div class="card-title">{{friend.first_name +" "+ friend.last_name}}<div class="status" [ngStyle]="{'background-image': getColor(friend.online)}"></div></div>
+                  <div class="card-subtitle">ID:{{friend.id}}</div>
+                  <div class="link"><a target="_blank" href="https://vk.com/id{{friend.id}}">Link</a></div>
+
+                </div>
+
+                <div class="tools">
+                  <a href=""><i class="nb-trash"></i></a>
+                  <a (click)="saveInLocalStorage()"><i class="nb-email"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h3>{{messageNotFound}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

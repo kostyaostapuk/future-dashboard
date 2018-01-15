@@ -1,19 +1,21 @@
 <div class="container">
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="filter">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="filter">
 
-            <div class="col-md-4">
-              <h3>Filters</h3>
-              <div class="filter-box">
-                <input type="checkbox" class="checkbox-btn" [checked]="online" (change)="online = $event.target.checked" (change)="showOnline(online)"> Online Now
-              </div>
-            </div>
-            <div class="col-md-4">
-              <input type="search" class="form-control" placeholder="Search user" [formControl]="searchField" maxlength="20">
-            </div>
+        <div class="col-md-4">
+          <h3>Filters</h3>
+          <div class="filter-box">
+            <input type="checkbox" class="checkbox-btn" [checked]="online" (change)="online = $event.target.checked" (change)="showOnline(online)"> Online Now
+            <a href="/#/favorites">Open Favorites</a>
           </div>
         </div>
+        <div class="col-md-4">
+          <input type="search" class="form-control" placeholder="Search user" [formControl]="searchField" maxlength="20">
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>

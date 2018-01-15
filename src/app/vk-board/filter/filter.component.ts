@@ -13,7 +13,7 @@ export class FilterComponent implements OnInit {
 
   online=false;
 
-
+  users=[];
   showOnline(online){
     return this.vkBoard.showOnline(online);
   }
@@ -28,8 +28,6 @@ export class FilterComponent implements OnInit {
           this.searchReq=term;
           this.searchFriend(this.searchReq.toLowerCase());
         });
-
-
   }
   constructor(private vkBoard: VkBoardComponent) { }
 
