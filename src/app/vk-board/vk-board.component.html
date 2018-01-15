@@ -1,4 +1,5 @@
 <filter></filter>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let friend of list">
@@ -13,8 +14,8 @@
           </div>
 
           <div class="tools">
-            <a (click)="clearList()"><i class="nb-star"></i></a>
-            <a (click)="clearList()"><i class="nb-email"></i></a>
+            <a (click)="showMessageBox()"><i class="nb-star"></i></a>
+            <a (click)="showMessageBox()"><i class="nb-email"></i></a>
           </div>
         </div>
       </div>

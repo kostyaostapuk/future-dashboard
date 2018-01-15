@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterService } from './data/filter.service';
 import { VkBoardComponent } from '../vk-board.component';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
 
@@ -32,7 +31,7 @@ export class FilterComponent implements OnInit {
 
 
   }
-  constructor(private filterData: FilterService, private vkBoard: VkBoardComponent) { }
+  constructor(private vkBoard: VkBoardComponent) { }
 
   ngOnInit() {
     this.searchInput();

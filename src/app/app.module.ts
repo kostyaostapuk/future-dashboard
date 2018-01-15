@@ -16,6 +16,7 @@ import { FilterService } from './vk-board/filter/data/filter.service';
 import { VkBoardComponent } from './vk-board/vk-board.component';
 import { FilterComponent } from './vk-board/filter/filter.component';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
+import { MessageBoxComponent } from './vk-board/message-box/message-box.component';
 
 // import { AppRoutingModule } from './app-routing.module';
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { VkBoardService } from './vk-board.service';
 
+
 @Component({
   selector: 'vk-board',
   templateUrl: './vk-board.component.html',
@@ -9,16 +10,10 @@ import { VkBoardService } from './vk-board.service';
 
 @Injectable()
 export class VkBoardComponent implements OnInit {
-
-  //Friend List
   searchList = [];
   list = [];
   cache = [];
   messageNotFound: string = "";
-  clearList() {
-    this.list = [];
-  }
-
 
   constructor(private vkService: VkBoardService) { }
   ngOnInit() {
@@ -65,15 +60,20 @@ export class VkBoardComponent implements OnInit {
 
     }
   }
+  showMessageBox(){
+    //
+  }
   getData() {
-    this.vkService.getData()
+    this.vkService.getData("friends.search")
       .subscribe(res => {
         let friendsJSON = res["_body"].response.items;
         this.list = friendsJSON;
 
       })
   }
-
+  clearList() {
+    this.list = [];
+  }
 
   //StatusColor
   color = ['linear-gradient(90deg,#fc0,#ffa100)', 'linear-gradient(90deg,#00d9bf,#00d977)'];
