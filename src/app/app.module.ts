@@ -12,11 +12,9 @@ import { SidebarComponent} from './sidebar/sidebar.component';
 import { Routes, RouterModule } from '@angular/router';
 
 import { VkBoardService } from './vk-board/vk-board.service';
-import { FilterService } from './vk-board/filter/data/filter.service';
 import { VkBoardComponent } from './vk-board/vk-board.component';
 import { FilterComponent } from './vk-board/filter/filter.component';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
-import { MessageBoxComponent } from './vk-board/message-box/message-box.component';
 import { FavoritesComponent } from './vk-board/favorites/favorites.component';
 
 // import { AppRoutingModule } from './app-routing.module';
@@ -48,7 +46,7 @@ const routes: Routes = [
     JsonpModule,
     ReactiveFormsModule
 	],
-	providers: [VkBoardService, FilterService, VkBoardComponent],
+	providers: [VkBoardService, VkBoardComponent],
 	bootstrap: [AppComponent]
 })
 

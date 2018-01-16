@@ -13,8 +13,7 @@ export class FavoritesComponent implements OnInit {
   list=[];
   getFavorites(){
     this.list=JSON.parse(localStorage.getItem('favorites'));
-    console.log(JSON.parse(localStorage.getItem('favorites')));
-    console.log("in fav: " +this.list);
+    console.log(this.list);
   }
   getColor(status:number){
     return this.vkBoard.getColorStatus(status);

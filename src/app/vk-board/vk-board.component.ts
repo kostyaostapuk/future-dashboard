@@ -14,12 +14,15 @@ export class VkBoardComponent implements OnInit {
   searchList = [];
   list = [];
   cache = [];
-  favoriteList=[];
+  favoriteList = [];
   messageNotFound: string = "";
+  inList: boolean;
 
   constructor(private vkService: VkBoardService) { }
   ngOnInit() {
     this.getData();
+
+    this.load();
   }
   showOnline(status) {
     if (status === true) {
@@ -50,8 +53,8 @@ export class VkBoardComponent implements OnInit {
           this.list.push(this.searchList[i]);
 
         }
-        if(this.list.length<=0){
-            this.messageNotFound = "Пользователи с такими данными не найдены, попробуйте ещё раз";
+        if (this.list.length <= 0) {
+          this.messageNotFound = "Пользователи с такими данными не найдены, попробуйте ещё раз";
         }
       }
     }
@@ -62,59 +65,72 @@ export class VkBoardComponent implements OnInit {
 
     }
   }
-  showMessageBox(){
+  showMessageBox() {
     //
   }
-  saveInLocalStorage(userName, userSurname, photo, userID, online){
-
-    // //
-    if (this.favoriteList.length==0) {
-      alert("Friend add to Favorites List");
-      this.favoriteList.push({first_name: userName, last_name: userSurname,photo_100: photo,id: userID, online: online  });
-      localStorage.setItem("favorites" , JSON.stringify(this.favoriteList));
+  save() {
+    localStorage.setItem("favorites", JSON.stringify(this.favoriteList));
+  }
+  load() {
+    let data = localStorage.getItem('favorites');
+    if (!data) {
+      return
     }
-    else{
+    data = JSON.parse(data);
+    for (let i = 0; i < data.length; i++) {
+      let friend = data[i];
+      console.log(friend);
+      this.favoriteList.push(friend);
+    }
 
-      if(this.favoriteList[0].id==userID){
-        alert("This user is already added");
-      }
-      else {
-        // this.favoriteList=JSON.parse(localStorage.getItem('favorites'));
-        // console.log(this.favoriteList);
-        // console.log(JSON.parse(localStorage.getItem('favorites')));
-        for (let i = 0; i < this.favoriteList.length; i++) {
+  }
 
-            if (this.favoriteList[i].id!=userID) {
-              alert("Friend add to Favorites List");
-              this.favoriteList.push({first_name: userName, last_name: userSurname,photo_100: photo,id: userID, online: online  });
-              localStorage.setItem("favorites" , JSON.stringify(this.favoriteList));
-              localStorage["favorites"]= JSON.stringify(this.favoriteList);
-              console.log(JSON.parse(localStorage.getItem('favorites')));
-            }
+  saveInLocalStorage(userName, userSurname, photo, userID, online) {
+
+    if (this.favoriteList.length == 0) {
+      alert("Friend add to Favorites List");
+      this.favoriteList.push({ first_name: userName, last_name: userSurname, photo_100: photo, id: userID, online: online });
+      this.save();
+    }
+    else {
+      for (let i = 0; i < this.favoriteList.length; i++) {
+        if (this.favoriteList[i].id == userID) {
+          this.inList=true;
+          break;
+        }else{
+          this.inList=false;
         }
       }
     }
-    //localStorage.setItem("favoritesList" , JSON.stringify(this.favoriteList));
-
-  }
-  getData() {
-    this.vkService.getData("friends.search")
-      .subscribe(res => {
-        let friendsJSON = res["_body"].response.items;
-        this.list = friendsJSON;
-
-      })
-  }
-  clearList() {
-    this.list = [];
-  }
-
-  //StatusColor
-  color = ['linear-gradient(90deg,#fc0,#ffa100)', 'linear-gradient(90deg,#00d9bf,#00d977)'];
-  getColorStatus(status: number) {
-    switch (status) {
-      case 0: return this.color[0];
-      case 1: return this.color[1];
+    switch (this.inList){
+      case true:
+        alert("The user has been added");
+      break;
+      case false:
+        alert("Friend add to Favorites List");
+        this.favoriteList.push({ first_name: userName, last_name: userSurname, photo_100: photo, id: userID, online: online });
+        this.save();
+      break;
     }
   }
+getData() {
+  this.vkService.getData("friends.search")
+    .subscribe(res => {
+      let friendsJSON = res["_body"].response.items;
+      this.list = friendsJSON;
+
+    })
+}
+clearList() {
+  this.list = [];
+}
+
+//StatusColor
+color = ['linear-gradient(90deg,#fc0,#ffa100)', 'linear-gradient(90deg,#00d9bf,#00d977)'];
+getColorStatus(status: number) {
+  switch (status) {
+    case 0: return this.color[0];
+    case 1: return this.color[1];
+  }
+}
 }
