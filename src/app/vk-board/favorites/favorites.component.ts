@@ -11,9 +11,19 @@ export class FavoritesComponent implements OnInit {
 
 
   list=[];
+  message:string;
+  remove(friendID){
+    this.vkBoard.remove(friendID);
+    this.getFavorites();
+  }
   getFavorites(){
     this.list=JSON.parse(localStorage.getItem('favorites'));
-    console.log(this.list);
+    if (this.list.length==0) {
+      this.message="Favorite list is empty";
+    }
+    else {
+      this.message="";
+    }
   }
   getColor(status:number){
     return this.vkBoard.getColorStatus(status);

@@ -8,8 +8,15 @@ a{
   color: #fff;
   font-family: "Exo", sans-serif;
 }
-/* a:active{
-  background-color: rgba(0,255,170,.25);
-  border-color: #00f9a6;
+a:hover{
+  cursor: pointer;
+}
+a .nb-trash{
   color: #fff;
-} */
+}
+.nb-trash:hover{
+  color: #ff386a !important;
+}
+.nb-arrow-dropleft{
+  font-size: 15px;
+}

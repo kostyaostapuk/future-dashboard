@@ -41,7 +41,6 @@ export class VkBoardComponent implements OnInit {
     }
   }
   searchFriend(val) {
-    console.log("val:" + val);
     this.searchList = this.list;
     this.clearList();
 
@@ -65,11 +64,25 @@ export class VkBoardComponent implements OnInit {
 
     }
   }
-  showMessageBox() {
-    //
+  sendMessage(){
+    alert("Binding to sending a message");
   }
   save() {
-    localStorage.setItem("favorites", JSON.stringify(this.favoriteList));
+      localStorage.setItem("favorites", JSON.stringify(this.favoriteList));
+  }
+  remove(friendID){
+      if (this.favoriteList.length==0) {
+          this.load();
+      }
+      let res=window.confirm('Are you sure you want to delete?');
+      if (res==true) {
+        for (let i = 0; i < this.favoriteList.length; i++) {
+            if (this.favoriteList[i].id==friendID) {
+                  this.favoriteList.splice(i,1);
+                  this.save();
+            }
+        }
+      }
   }
   load() {
     let data = localStorage.getItem('favorites');
@@ -79,7 +92,6 @@ export class VkBoardComponent implements OnInit {
     data = JSON.parse(data);
     for (let i = 0; i < data.length; i++) {
       let friend = data[i];
-      console.log(friend);
       this.favoriteList.push(friend);
     }
 
